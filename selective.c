@@ -7,7 +7,7 @@
 #define DATA_TIMER 2000
 #define ACK_TIMER 1000
 #define MAX_SEQ 7
-
+#define NR_BUFS ((MAX_SEQ + 1) >> 1)
 #define inc(x) x = (x == MAX_SEQ) ? 0 : x + 1;
 
 typedef unsigned char seq_nr;

@@ -12,7 +12,7 @@
 
 typedef unsigned char seq_nr;
 typedef unsigned char frame_kind;
-typedef unsigned char packet[PKT_LEN];
+typedef unsigned char packet;
 
 struct frame {
 	frame_kind kind; /* FRAME_DATA */
