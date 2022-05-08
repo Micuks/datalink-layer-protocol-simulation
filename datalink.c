@@ -12,13 +12,13 @@
 
 typedef unsigned char seq_nr;
 typedef unsigned char frame_kind;
-typedef unsigned char packet;
+typedef unsigned char packet[PKT_LEN];
 
 struct frame {
 	frame_kind kind; /* FRAME_DATA */
 	seq_nr ack;
 	seq_nr seq;
-	packet info[PKT_LEN];
+	packet info;
 	unsigned int checksum;
 };
 

@@ -18,11 +18,12 @@ struct frame {
 	frame_kind kind; /* FRAME_DATA */
 	seq_nr ack;
 	seq_nr seq;
-	packet info[PKT_LEN];
+	packet info;
 	unsigned int checksum;
 };
 
 static int phl_ready = 0;
+static unsigned char no_nak = 1;
 
 static unsigned char between(seq_nr a, seq_nr b, seq_nr c) {
 	return((a <= b && b < c) || (a <= b && c < a) || (b < c && c < a));
