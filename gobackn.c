@@ -7,7 +7,7 @@
 #define DATA_TIMER 2000
 #define ACK_TIMER 1000
 #define MAX_SEQ 7
-#define NR_BUFS ((MAX_SEQ + 1) >> 1)
+
 #define inc(x) x = (x == MAX_SEQ) ? 0 : x + 1;
 
 typedef unsigned char seq_nr;
@@ -23,7 +23,6 @@ struct frame {
 };
 
 static int phl_ready = 0;
-static unsigned char no_nak = 1;
 
 static unsigned char between(seq_nr a, seq_nr b, seq_nr c) {
 	return((a <= b && b < c) || (a <= b && c < a) || (b < c && c < a));
